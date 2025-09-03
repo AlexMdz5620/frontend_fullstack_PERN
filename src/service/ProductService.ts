@@ -16,7 +16,7 @@ export async function addProduct(data: ProductData) {
 
         if (result.success) {
             const url = `${import.meta.env.VITE_APU_URL}/api/products`;
-            axios.post(url, {
+            await axios.post(url, {
                 name: result.output.name,
                 price: result.output.price,
             });
